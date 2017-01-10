@@ -9,10 +9,10 @@ TARGET=main
 all: build
 
 build:
-	go build $(TARGET).go
+	swiftc $(TARGET).swift
 
 run:
-	go run $(TARGET).go
+	swift $(TARGET).swift
 
 dist: build
 
@@ -20,4 +20,4 @@ clean:
 	rm -f $(TARGET)
 
 ver:
-	go version
+	swift -version

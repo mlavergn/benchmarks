@@ -26,3 +26,6 @@ dist:
 
 clean:
 	rm -rf $(TARGET).dSYM $(TARGET).exe $(TARGET)
+
+ver:
+	mono --version

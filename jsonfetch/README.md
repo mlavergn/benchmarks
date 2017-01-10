@@ -6,5 +6,6 @@ The timing does include network latencency but I really wanted to time the entir
 
 Cold start avg elapsed time:
 
-1. 105ms go
-1. 450ms csharp	
+1. 95ms go 1.8b2
+1. 135ms swift 3.0.2
+1. 450ms csharp	4.6.2
