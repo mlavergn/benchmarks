@@ -11,7 +11,7 @@ import (
 func JSONTest(url string) string {
 	// perform the request
 	req, _ := http.NewRequest("GET", url, nil)
-	req.Header.Add("Content-Type", "application/json")
+	req.Header.Add("User-Agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 10_2 like Mac OS X) AppleWebKit/602.3.12 (KHTML, like Gecko) Version/10.0 Mobile/14C92 Safari/602.1")
 	client := &http.Client{}
 	resp, _ := client.Do(req)
 
