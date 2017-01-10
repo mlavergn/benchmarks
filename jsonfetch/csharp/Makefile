@@ -18,7 +18,7 @@ all: build
 build:
 	mcs $(CFLAGS) $(TARGET).cs
 
-run:
+run: build
 	mono $(TARGET).exe
 
 dist:
