@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 class JsonFetch {
 	static string JsonTest(string url) {
@@ -20,10 +21,9 @@ class JsonFetch {
 		String responseData = streamreader.ReadToEnd();
 
 		// convert the JSON
-		var x = JsonConvert.DeserializeObject<dynamic>(responseData);
+		JObject x = JObject.Parse(responseData);
 
-		// return a string field
-		return x.ip.Value;
+		return (string)x["ip"];
 	}
 	
 	static void Main(string[] args) {
