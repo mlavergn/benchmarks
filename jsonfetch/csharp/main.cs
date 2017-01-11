@@ -28,8 +28,10 @@ class JsonFetch {
 	
 	static void Main(string[] args) {
 		Stopwatch sw = Stopwatch.StartNew();
-		JsonTest("http://iotjson.appspot.com");
+		string data = JsonTest("http://iotjson.appspot.com");
 		sw.Stop();
 		Console.WriteLine(sw.ElapsedMilliseconds);
+		if (data.Length < 0) {
+		} 
 	}
 }
