@@ -9,10 +9,10 @@ TARGET=main
 all: build
 
 build:
-	swiftc $(TARGET).swift
+	swiftc -O $(TARGET).swift
 
 run:
-	swift $(TARGET).swift
+	swift -O $(TARGET).swift
 
 dist: build
 

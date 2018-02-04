@@ -8,7 +8,8 @@ import (
 	"time"
 )
 
-func FileTest(path string) (result [][]string) {
+// FileTest benchmark
+func fileTest(path string) (result [][]string) {
 	bytes, _ := ioutil.ReadFile(path)
 	str := string(bytes)
 	lines := strings.Split(str, "\n")
@@ -32,11 +33,12 @@ func FileTest(path string) (result [][]string) {
 func main() {
 	cwdPath, _ := os.Getwd()
 	filePath := cwdPath + "/../employees.txt"
+	log.Println(filePath)
 
 	var timer time.Time
 	timer = time.Now()
 
-	data := FileTest(filePath)
+	data := fileTest(filePath)
 	log.Println(time.Since(timer))
 
 	if len(data) < 300000 {

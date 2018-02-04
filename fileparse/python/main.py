@@ -6,10 +6,10 @@ setup = '''
 import os
 
 def FileTest(path):
-	file = open(path, "rw")
+	file = open(path, "r")
 	lines = file.readlines()
 
-	data = [None for i in xrange(len(lines))]
+	data = [None for i in range(len(lines))]
 	i = 0
 	for line in lines:
 		data[i] = line.split(',')
@@ -21,5 +21,5 @@ def FileTest(path):
 		
 	return data	
 '''
-
-print timeit.timeit("FileTest(os.getcwd() + '/../employees.txt')", setup=setup, number=1) * 1000.0
+elapsed = timeit.timeit("FileTest(os.getcwd() + '/../employees.txt')", setup=setup, number=1)
+print(elapsed * 1000.0)

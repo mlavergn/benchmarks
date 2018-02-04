@@ -11,7 +11,7 @@ all: build
 build:
 
 run:
-	python $(TARGET).py
+	python3 $(TARGET).py
 
 dist: build
 
@@ -19,4 +19,4 @@ clean:
 	rm -f $(TARGET)
 
 ver:
-	python --version
+	python3 --version
