@@ -39,7 +39,12 @@ func main() {
 	timer = time.Now()
 
 	data := fileTest(filePath)
-	log.Println(time.Since(timer))
+	log.Println(time.Since(timer), "ms - cold")
+
+	timer = time.Now()
+
+	data = fileTest(filePath)
+	log.Println(time.Since(timer), "ms - warm")
 
 	if len(data) < 300000 {
 		log.Println("failed")

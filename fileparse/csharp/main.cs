@@ -28,12 +28,21 @@ class Untitled
 	static void Main(string[] args)
 	{
 		string path = Directory.GetCurrentDirectory() + "/../employees.txt";
+
 		Stopwatch sw = Stopwatch.StartNew();
 		string[][] data = FileTest(path);
 		sw.Stop();
-		Console.WriteLine(sw.ElapsedMilliseconds);
+		Console.Write(sw.ElapsedMilliseconds);
+		Console.WriteLine("ms - cold");
 
-		if (data.Length < 0) {
+		sw = Stopwatch.StartNew();
+		string[][] data2 = FileTest(path);
+		sw.Stop();
+		Console.Write(sw.ElapsedMilliseconds);
+		Console.WriteLine("ms - warm");
+
+		if (data.Length < 30000) {
+			Console.WriteLine("error");
 		}
 	}
 }

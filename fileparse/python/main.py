@@ -22,4 +22,7 @@ def FileTest(path):
 	return data	
 '''
 elapsed = timeit.timeit("FileTest(os.getcwd() + '/../employees.txt')", setup=setup, number=1)
-print(elapsed * 1000.0)
+print(elapsed * 1000.0, "ms - cold")
+
+elapsed = timeit.timeit("FileTest(os.getcwd() + '/../employees.txt')", setup=setup, number=1)
+print(elapsed * 1000.0, "ms - warm")

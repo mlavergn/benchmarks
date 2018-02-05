@@ -4,8 +4,17 @@ Simple read of CSV file with parsing into a 2D array.
 
 Cold start avg elapsed time excluding compilation:
 
-1. 225ms go 1.9.3
-1. 685ms csharp	4.6.2
-1. 845ms python 3.5.2
-1. 28500ms swift 4.0.3
+1. 215ms go 1.9.3
+1. 610ms csharp	15.5.180
+1. 830ms python 3.5.2
+1. 2135ms java 9.0
+1. 2825ms swift 4.0.3
+
+Warm start avg elapsed time excluding compilation:
+
+1. 195ms go 1.9.3
+1. 610ms csharp	15.5.180
+1. 770ms python 3.5.2
+1. 1425ms java 9.0
+1. 2805ms swift 4.0.3
 

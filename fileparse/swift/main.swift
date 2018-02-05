@@ -25,10 +25,17 @@ func fileTest(_ path: String) -> [[String]] {
 
 var path = FileManager.default.currentDirectoryPath
 
-let startTime = CFAbsoluteTimeGetCurrent()
+_ = fileTest(path)
+
 path = "file://" + path + "/../employees.txt"
-let data = fileTest(path)
-print(Double(CFAbsoluteTimeGetCurrent() - startTime) * 1000.0, "ms")
+
+var startTime = CFAbsoluteTimeGetCurrent()
+var data = fileTest(path)
+print(Double(CFAbsoluteTimeGetCurrent() - startTime) * 1000.0, "ms - cold")
+
+startTime = CFAbsoluteTimeGetCurrent()
+data = fileTest(path)
+print(Double(CFAbsoluteTimeGetCurrent() - startTime) * 1000.0, "ms - warm")
 
 if data.count < 30000 {
 	print("failed")

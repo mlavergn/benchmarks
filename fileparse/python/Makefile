@@ -6,7 +6,7 @@
 
 TARGET=main
 
-all: build
+all: run
 
 build:
 

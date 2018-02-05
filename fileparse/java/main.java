@@ -44,10 +44,19 @@ public class main {
 		String cwdPath = System.getProperty("user.dir");
 		String filePath = cwdPath + "/../employees.txt";
 		System.out.println(filePath);
-		
+
 		long timer = System.currentTimeMillis();
 		String[][] data = fileTest(filePath);
 		System.out.print(System.currentTimeMillis() - timer);
-		System.out.println("ms");		
+		System.out.println("ms -cold");		
+
+		timer = System.currentTimeMillis();
+		data = fileTest(filePath);
+		System.out.print(System.currentTimeMillis() - timer);
+		System.out.println("ms - warm");		
+
+		if (data.length < 30000) {
+			System.out.println("failed");
+		}
 	}
 }
