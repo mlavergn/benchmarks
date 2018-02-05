@@ -4,6 +4,8 @@
 #
 ###############################################
 
+# https://www.microsoft.com/net/learn/get-started/macos
+
 CC=/usr/local/share/dotnet/dotnet
 
 all: run clean

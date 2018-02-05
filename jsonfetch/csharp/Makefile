@@ -4,28 +4,24 @@
 #
 ###############################################
 
-CFLAGS  := /reference:/Applications/Xamarin\ Studio.app/Contents/Resources/lib/monodevelop/bin/Newtonsoft.Json.dll
-LDFLAGS :=
+# https://www.microsoft.com/net/learn/get-started/macos
 
-AS="as -arch i386"
-CC="clang -arch i386 -mmacosx-version-min=10.6 -framework CoreFoundation -lobjc -liconv"
-PATH=/Library/Frameworks/Mono.framework/Commands:/usr/bin:$PATH
+CC=/usr/local/share/dotnet/dotnet
 
-TARGET=main
-
-all: build
+all: run clean
 
 build:
-	mcs $(CFLAGS) $(TARGET).cs
+	$(CC) build
 
 run: build
-	mono $(TARGET).exe
+	$(CC) run
 
-dist:
-	mkbundle $(TARGET).exe --deps -o $(TARGET)
+setup:
+	$(CC) new console
 
 clean:
-	rm -rf $(TARGET).dSYM $(TARGET).exe $(TARGET)
+	rm -r bin
+	rm -r obj
 
 ver:
-	mono --version
+	$(CC) --version

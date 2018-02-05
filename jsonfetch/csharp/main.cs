@@ -3,9 +3,8 @@ using System.Net;
 using System.IO;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 
 class JsonFetch {
 	static string JsonTest(string url) {
@@ -17,21 +16,29 @@ class JsonFetch {
 
 		// read the result
 		Stream stream = response.GetResponseStream();
-		StreamReader streamreader = new StreamReader(stream);
-		String responseData = streamreader.ReadToEnd();
 
 		// convert the JSON
-		JObject x = JObject.Parse(responseData);
+		var ser = new DataContractJsonSerializer(typeof(IOT));
+		IOT x = (IOT)ser.ReadObject(stream);
 
-		return (string)x["ip"];
+		return x.IP;
 	}
 	
 	static void Main(string[] args) {
 		Stopwatch sw = Stopwatch.StartNew();
 		string data = JsonTest("http://iotjson.appspot.com");
 		sw.Stop();
-		Console.WriteLine(sw.ElapsedMilliseconds);
+		Console.Write(sw.ElapsedMilliseconds);
+		Console.WriteLine(" ms");
+		Console.WriteLine(data);
 		if (data.Length < 0) {
 		} 
 	}
+}
+
+[DataContract]
+class IOT
+{
+    [DataMember(Name="host")] public string Host { get; set; }
+    [DataMember(Name="ip")] public string IP { get; set; }
 }
