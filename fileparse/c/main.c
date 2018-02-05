@@ -26,7 +26,7 @@ char** fileparse(char *path) {
 
 	// split it into lines
 	int cols = 6;
-	char **result  = calloc(sizeof(char*), size);
+	char **result = calloc(size, sizeof(char*));
 	int line = 0;
 
 	int loffset = 0;
