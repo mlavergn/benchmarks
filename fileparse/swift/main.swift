@@ -28,7 +28,7 @@ var path = FileManager.default.currentDirectoryPath
 let startTime = CFAbsoluteTimeGetCurrent()
 path = "file://" + path + "/../employees.txt"
 let data = fileTest(path)
-print(Double(CFAbsoluteTimeGetCurrent() - startTime) * 1000.0)
+print(Double(CFAbsoluteTimeGetCurrent() - startTime) * 1000.0, "ms")
 
 if data.count < 30000 {
 	print("failed")

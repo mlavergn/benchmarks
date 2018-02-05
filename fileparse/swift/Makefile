@@ -6,7 +6,7 @@
 
 TARGET=main
 
-all: build
+all: run
 
 build:
 	swiftc -O $(TARGET).swift
@@ -17,7 +17,7 @@ run:
 dist: build
 
 clean:
-	rm -f $(TARGET)
+	rm $(TARGET)
 
 ver:
 	swift -version

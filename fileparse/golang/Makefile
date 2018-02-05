@@ -6,18 +6,18 @@
 
 TARGET=main
 
-all: build
+all: run clean
 
 build:
 	go build $(TARGET).go
 
-run:
+run: build
 	go run $(TARGET).go
 
 dist: build
 
 clean:
-	rm -f $(TARGET)
+	rm $(TARGET)
 
 ver:
 	go version
