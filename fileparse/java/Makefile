@@ -12,7 +12,9 @@ build:
 	javac $(TARGET).java
 
 run: build
-	java $(TARGET)
+	# this actually runs slower, here for posterity
+	# java -Xmx512M -Xms512M -XX:+AggressiveOpts -XX:CompileThreshold=1 $(TARGET)
+	/usr/bin/time -l java -Xmx512M -Xms512M $(TARGET)
 
 dist: build
 

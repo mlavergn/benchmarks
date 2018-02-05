@@ -12,7 +12,7 @@ build:
 	swiftc -O $(TARGET).swift
 
 run:
-	swift -O $(TARGET).swift
+	/usr/bin/time -l swift -O $(TARGET).swift
 
 dist: build
 

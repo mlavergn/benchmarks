@@ -14,7 +14,7 @@ build:
 	$(CC) build
 
 run: build
-	$(CC) run
+	/usr/bin/time -l $(CC) run
 
 setup:
 	$(CC) new console

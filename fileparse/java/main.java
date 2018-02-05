@@ -31,6 +31,7 @@ public class main {
 				i++;
 			};
 
+			lines.close();
 			return result;
 		} catch (Exception e) {
 			System.out.println(e);

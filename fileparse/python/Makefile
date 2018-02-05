@@ -11,7 +11,7 @@ all: run
 build:
 
 run:
-	python3 $(TARGET).py
+	/usr/bin/time -l python3 $(TARGET).py
 
 dist: build
 

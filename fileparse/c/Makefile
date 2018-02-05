@@ -29,7 +29,7 @@ build:
 	$(CC) $(CFLAGS) $(TARGET).c -o main $(LIBS)
 
 run:
-	./main
+	/usr/bin/time -l ./main
 
 clean:
 	rm -rf core $(TARGET).o a.out $(TARGET).dSYM $(TARGET)

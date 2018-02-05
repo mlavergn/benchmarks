@@ -12,7 +12,7 @@ build:
 	go build $(TARGET).go
 
 run: build
-	go run $(TARGET).go
+	/usr/bin/time -l go run $(TARGET).go
 
 dist: build
 
