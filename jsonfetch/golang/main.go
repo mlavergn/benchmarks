@@ -28,6 +28,7 @@ func JSONTest(url string) string {
 
 func main() {
 	timerShared := time.Now()
-	JSONTest("http://iotjson.appspot.com")
+	data := JSONTest("http://iotjson.appspot.com")
 	log.Println(time.Since(timerShared))
+	log.Println(data)
 }

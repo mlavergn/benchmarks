@@ -6,7 +6,7 @@
 
 TARGET=main
 
-all: build
+all: run clean
 
 build:
 	go build $(TARGET).go
